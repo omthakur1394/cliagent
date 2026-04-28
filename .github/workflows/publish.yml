@@ -3,21 +3,20 @@ name: Publish to PyPI
 on:
   push:
     tags:
-      - "v*"   # triggers only when you push a version tag like v0.2.0
-  workflow_dispatch: # Allows you to trigger it manually from the Actions tab
+      - "v*"
+  workflow_dispatch:
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    
-    # Notice: the "environment" line is gone!
     
     permissions:
       id-token: write
       contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,7 +27,11 @@ jobs:
         run: pip install build
 
       - name: Build package
-        run: python -m build
-#
+        run: |
+          cd codeguard
+          python -m build
+
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: codeguard/dist/
