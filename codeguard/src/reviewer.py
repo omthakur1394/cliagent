@@ -1,5 +1,5 @@
 from groq import Groq
-from src.config import GROQ_API_KEY, MODEL
+from .config import GROQ_API_KEY, MODEL
 client = Groq(api_key=GROQ_API_KEY)
 
 

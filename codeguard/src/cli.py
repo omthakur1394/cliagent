@@ -1,7 +1,7 @@
 import os
 import getpass
-from src.agent import agent
-from src.reporter import print_report
+from .agent import agent
+from .reporter import print_report
 
 def main():
     print("\n🛡️  Welcome to CodeGuard — Ethical AI Code Reviewer")

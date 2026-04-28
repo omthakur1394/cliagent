@@ -6,9 +6,9 @@ from typing import TypedDict, Annotated
 import operator
 import os
 from dotenv import load_dotenv
-from src.license_checker import is_open_source
-from src.reporter import print_report
-from src.config import GROQ_API_KEY, MODEL
+from .license_checker import is_open_source
+from .reporter import print_report
+from .config import GROQ_API_KEY, MODEL
 
 load_dotenv()
 
