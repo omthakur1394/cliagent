@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "codeguard-ai"
-version = "0.2.1"
+version = "0.2.2"
 description = "Ethical AI Code Review Agent for private GitHub repositories"
 requires-python = ">=3.10"
 dependencies = [
