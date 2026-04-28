@@ -60,4 +60,15 @@ def main():
         print("\n❌ No reviews generated. Check if the repo is empty or open-source.")
 
 if __name__ == "__main__":
-    main()
+    if __package__ is None or __package__ == "":
+        import sys
+        from pathlib import Path
+        # Add the parent directory ('codeguard') to sys.path so 'src' can be treated as a package
+        parent_dir = str(Path(__file__).resolve().parent.parent)
+        if parent_dir not in sys.path:
+            sys.path.insert(0, parent_dir)
+        import importlib
+        module = importlib.import_module("src.cli")
+        sys.exit(module.main())
+    else:
+        main()
