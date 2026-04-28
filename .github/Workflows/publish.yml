@@ -4,13 +4,17 @@ on:
   push:
     tags:
       - "v*"   # triggers only when you push a version tag like v0.2.0
+  workflow_dispatch: # Allows you to trigger it manually from the Actions tab
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment: pypi
+    
+    # Notice: the "environment" line is gone!
+    
     permissions:
       id-token: write
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
