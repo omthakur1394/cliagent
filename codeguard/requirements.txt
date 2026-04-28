@@ -1,0 +1,24 @@
+# LangGraph + LangChain
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+
+# OpenAI
+openai>=1.0.0
+
+# GitHub API + HTTP
+requests>=2.31.0
+
+# Terminal UI
+rich>=13.0.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# CLI
+typer>=0.12.0
+
+# Packaging
+setuptools>=68.0.0
+wheel>=0.41.0
