@@ -5,12 +5,9 @@ from langchain_groq import ChatGroq
 from typing import TypedDict, Annotated
 import operator
 import os
-from dotenv import load_dotenv
 from .license_checker import is_open_source
 from .reporter import print_report
 from .config import GROQ_API_KEY, MODEL
-
-load_dotenv()
 
 # --- State ---
 class AgentState(TypedDict):

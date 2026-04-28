@@ -56,7 +56,8 @@ codeguard
 
 You will be prompted for:
 1. Your private GitHub repo URL
-2. Your GitHub Personal Access Token (hidden input, never stored)
+2. Your Groq API Key (hidden input, never stored)
+3. Your GitHub Personal Access Token (hidden input, never stored)
 
 ---
 

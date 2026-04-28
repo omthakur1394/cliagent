@@ -1,7 +1,5 @@
 import os
 import getpass
-from .agent import agent
-from .reporter import print_report
 
 def main():
     print("\n🛡️  Welcome to CodeGuard — Ethical AI Code Reviewer")
@@ -24,12 +22,24 @@ def main():
 
         break
 
+    # Prompt for Groq API Key
+    groq_key = getpass.getpass("\n🔑 Enter your Groq API Key (input will be hidden): ").strip()
+    if groq_key:
+        os.environ["GROQ_API_KEY"] = groq_key
+    else:
+        print("❌ Groq API Key is required to run CodeGuard.")
+        return
+
     # Prompt the user for their GitHub Token
     token = getpass.getpass("\n🔑 Enter your GitHub Personal Access Token (input will be hidden): ").strip()
     if token:
         os.environ["GITHUB_TOKEN"] = token
     else:
         print("⚠️  No token provided. CodeGuard may fail to clone private repositories.")
+
+    # Now that environment variables are set, import the agent and reporter
+    from .agent import agent
+    from .reporter import print_report
 
     print(f"\n🛡️  CodeGuard starting review for: {repo_url}\n")
 

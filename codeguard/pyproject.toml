@@ -4,12 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "codeguard-ai"
-version = "0.2.4" # Bump to 0.2.4
+version = "0.2.5" # Bump to 0.2.5
 dependencies = [
     "langgraph",
     "langchain-core",
     "langchain-groq",
-    "python-dotenv",
     "requests",
     "rich",
     "groq"
