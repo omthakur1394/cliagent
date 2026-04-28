@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "codeguard-ai"
-version = "0.2.3"  # Bump to 0.2.3
+version = "0.2.4" # Bump to 0.2.4
 dependencies = [
     "langgraph",
     "langchain-core",
@@ -19,5 +19,6 @@ dependencies = [
 codeguard = "codeguard.cli:main"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+# This tells setuptools: "There is a package called 'codeguard', and its code is in the 'src' folder"
+package-dir = {"codeguard" = "src"}
 packages = ["codeguard"]
