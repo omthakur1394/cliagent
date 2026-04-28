@@ -31,9 +31,9 @@ def review_all_files_tool(repo_url: str) -> dict:
     """Fetch all files, review them, write fixes to disk, then commit with human approval."""
     import os
     import time
-    from src.git_manager import clone_repo, get_local_files, commit_changes
-    from src.reviewer import review_file
-    from src.license_checker import is_open_source
+    from .git_manager import clone_repo, get_local_files, commit_changes
+    from .reviewer import review_file
+    from .license_checker import is_open_source
 
     # safety check
     is_oss, _ = is_open_source(repo_url)
